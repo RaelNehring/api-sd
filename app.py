@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
@@ -30,4 +31,5 @@ def calc():
     return jsonify({'resultado': resultado})
 
 if __name__ == '__main__':
-    app.run(port=8080, debug=False)
+    serve(app, host="0.0.0.0", port=8080)
+    #app.run(port=8080, debug=False)
