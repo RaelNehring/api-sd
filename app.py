@@ -30,4 +30,4 @@ def calc():
     return jsonify({'resultado': resultado})
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(port=8080, debug=False)
